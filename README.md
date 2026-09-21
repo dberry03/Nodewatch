@@ -1,2 +1,2 @@
 # Nodewatch
-KoH - Gather / Slay / Chores
+Gather / Slay / Chores
