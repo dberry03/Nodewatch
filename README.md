@@ -109,7 +109,7 @@
 
 ## 🚀 Install
 
-1. Download **`NodeWatch-Setup-<version>.exe`** from the [latest release](https://github.com/dberry03/Nodewatch/releases/latest).
+1. Download **`NodeWatch-Setup.exe`** from the [latest release](https://github.com/dberry03/Nodewatch/releases/latest).
 2. Run it. It installs for your Windows account only, so no administrator rights are needed.
 3. Start NodeWatch and enter your licence key when asked.
 
