@@ -1,7 +1,7 @@
 <div align="center">
 
 <img src="images/icon.png" width="120" alt="NodeWatch icon"/>
-
+<br>
 <img src="images/logo.png" width="340" alt="NodeWatch"/>
 
 **Hands-off gathering, hunting and clan chores for Android emulators — watched from your desktop or your phone.**
