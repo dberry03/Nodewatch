@@ -112,6 +112,7 @@
 1. Download **`NodeWatch-Setup.exe`** from the [latest release](https://github.com/dberry03/Nodewatch/releases/latest).
 2. Run it. It installs for your Windows account only, so no administrator rights are needed.
 3. Start NodeWatch and enter your licence key when asked.
+   <sub><em>Don't have a licence key? Get one from the NodeWatch Discord.</em></sub>
 
 > [!IMPORTANT]
 > Each emulator instance must be set to **1080 × 1920, portrait** in its display settings.
