@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NodeWatch - gathering on autopilot</title>
+<meta name="description" content="NodeWatch keeps every march slot full: gathering, mob slaying, clan chores and shields, controlled from your PC or Discord.">
+<link rel="icon" type="image/png" href="images/nodewatch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<style>
+body{margin:0;background:#060c14}
+a{color:#6fe1e6}a:hover{color:#a6f3f5}
+.nw{font-family:"Figtree","Segoe UI",sans-serif;color:#dce7e8;background:#060c14;overflow-x:hidden}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px;box-sizing:border-box}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none;box-sizing:border-box}
+.btn-primary{background:#43b6c7;color:#060c14}
+.btn-primary:hover{background:#6fe1e6;color:#060c14}
+.btn-ghost{border:1px solid #2a3a4f;color:#dce7e8;background:#0d141e}
+.btn-ghost:hover{border-color:#43b6c7;color:#ffffff}
+.shot{display:block;width:100%;height:auto;border-radius:14px;border:1px solid #223144}
+.feature{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center}
+.feature.flip{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.feature.flip .copy{order:2}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.navlinks{display:flex;gap:28px;align-items:center}
+@media (max-width:900px){
+.feature,.feature.flip{grid-template-columns:minmax(0,1fr);gap:32px}
+.feature.flip .copy{order:0}
+.grid3,.steps{grid-template-columns:minmax(0,1fr)}
+.navlinks{display:none}
+.hero-title{font-size:44px !important}
+.wrap{padding:0 20px}
+}
+</style>
+<style>html{scroll-behavior:smooth}</style>
+</head>
+<body>
+<div class="nw">
+
+<!-- NAV -->
+<header style="position: relative; z-index: 2; border-bottom: 1px solid #142030">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 76px">
+<a href="#top" aria-label="NodeWatch home" style="display: flex; align-items: center">
+<img src="images/nodewatch-logo.png" alt="NodeWatch" style="height: 26px; width: auto">
+</a>
+<nav class="navlinks" aria-label="Sections">
+<a href="#features" style="color: #9fb2bf; text-decoration: none; font-weight: 500; font-size: 15px">Features</a>
+<a href="#phone" style="color: #9fb2bf; text-decoration: none; font-weight: 500; font-size: 15px">Discord control</a>
+<a href="#get" style="color: #9fb2bf; text-decoration: none; font-weight: 500; font-size: 15px">Get it</a>
+</nav>
+<a class="btn btn-primary" href="https://discord.gg/HCs2wAwmsx" target="_blank" rel="noopener" style="min-height: 44px; font-size: 15px; padding: 0 18px">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+Join the Discord
+</a>
+</div>
+</header>
+
+<!-- HERO -->
+<section id="top" style="position: relative; padding: 96px 0 72px; background: radial-gradient(900px 480px at 50% 0%, rgba(67,182,199,0.16), rgba(6,12,20,0) 70%)">
+<div class="wrap" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
+<div class="mono" style="display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border: 1px solid #223144; border-radius: 999px; background: #0d141e; color: #6fe1e6; font-size: 12px; letter-spacing: 0.14em">
+<span style="width: 7px; height: 7px; border-radius: 50%; background: #5fd38d"></span>
+GATHER // SLAY · VERSION 2.2
+</div>
+<h1 class="hero-title" style="margin: 0; max-width: 900px; font-size: 68px; line-height: 1.04; font-weight: 800; letter-spacing: -0.025em; color: #f3f8f8">Every march slot full.<br>Even while you sleep.</h1>
+<p style="margin: 0; max-width: 680px; font-size: 20px; line-height: 1.55; color: #9fb2bf">NodeWatch runs your emulators for you: it finds nodes, sends marches the moment a slot frees up, hunts mobs, keeps your shield up and handles clan chores. Watch it all from your PC or your phone.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 8px">
+<a class="btn btn-primary" href="https://discord.gg/HCs2wAwmsx" target="_blank" rel="noopener">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+Get NodeWatch on Discord
+</a>
+<a class="btn btn-ghost" href="#features">See what it does</a>
+</div>
+<p style="margin: 0; font-size: 14px; color: #6f8494">$10 a month or $40 lifetime. Download, licence keys and support all live in the NodeWatch Discord. Windows PC.</p>
+</div>
+<div class="wrap" style="margin-top: 64px">
+<div style="position: relative; border-radius: 18px; padding: 10px; background: linear-gradient(180deg, #1a2635, #0d141e); border: 1px solid #223144; box-shadow: 0 40px 120px rgba(0,0,0,0.55), 0 0 0 1px rgba(67,182,199,0.08)">
+<img class="shot" src="images/dashboard.png" alt="The NodeWatch dashboard: four instances running, a timeline of marches coming home, and a card per instance">
+</div>
+</div>
+</section>
+
+<!-- MODES STRIP -->
+<section aria-label="What NodeWatch does" style="padding: 24px 0 88px">
+<div class="wrap">
+<div class="grid3">
+<div style="padding: 26px; border-radius: 16px; background: #0d141e; border: 1px solid #1a2635; display: flex; flex-direction: column; gap: 10px">
+<div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(240,166,96,0.14); color: #f0a660; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6"></path></svg>
+</div>
+<h2 style="margin: 0; font-size: 20px; font-weight: 700; color: #f3f8f8">Gather resources</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #9fb2bf">Food, gold or ore at the level you choose. A march goes out again as soon as one comes home.</p>
+</div>
+<div style="padding: 26px; border-radius: 16px; background: #0d141e; border: 1px solid #1a2635; display: flex; flex-direction: column; gap: 10px">
+<div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(176,140,240,0.14); color: #b08cf0; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"></path><path d="M13 19l6-6"></path><path d="M16 16l4 4"></path><path d="M19 21l2-2"></path></svg>
+</div>
+<h2 style="margin: 0; font-size: 20px; font-weight: 700; color: #f3f8f8">Slay mobs</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #9fb2bf">Hunts mobs up to your level and checks each target before it attacks, so troops never go to the wrong fight.</p>
+</div>
+<div style="padding: 26px; border-radius: 16px; background: #0d141e; border: 1px solid #1a2635; display: flex; flex-direction: column; gap: 10px">
+<div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(67,182,199,0.14); color: #6fe1e6; display: flex; align-items: center; justify-content: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+</div>
+<h2 style="margin: 0; font-size: 20px; font-weight: 700; color: #f3f8f8">Clan chores &amp; shield</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #9fb2bf">Opens clan chests, helps your clan and renews your shield before it runs out, in every mode.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FEATURE: LAUNCH -->
+<section id="features" style="padding: 72px 0; border-top: 1px solid #101a27">
+<div class="wrap feature">
+<div class="copy" style="display: flex; flex-direction: column; gap: 18px">
+<div class="mono" style="font-size: 12px; letter-spacing: 0.14em; color: #43b6c7">SET UP ONCE</div>
+<h2 style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 800; letter-spacing: -0.02em; color: #f3f8f8">Tick your emulators. Press Launch.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #9fb2bf">Each emulator keeps its own settings, and NodeWatch reads them back to you in plain words before it starts. It checks the screen size and the connection first, so it never sits there looking busy while doing nothing.</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 16px; color: #c9d6da">
+<li style="display: flex; gap: 10px; align-items: flex-start"><span style="color: #5fd38d; font-weight: 700">✓</span>BlueStacks, MEmu, Nox and LDPlayer, several at once</li>
+<li style="display: flex; gap: 10px; align-items: flex-start"><span style="color: #5fd38d; font-weight: 700">✓</span>Pick biomes per march, or let a preset do it</li>
+<li style="display: flex; gap: 10px; align-items: flex-start"><span style="color: #5fd38d; font-weight: 700">✓</span>No food left? It switches to gold or ore by itself</li>
+</ul>
+</div>
+<img class="shot" src="images/launch.png" alt="The Launch page: emulators on the left, one instance's settings in the middle, a plain-words summary on the right" style="box-shadow: 0 30px 80px rgba(0,0,0,0.5)">
+</div>
+</section>
+
+<!-- FEATURE: DISCORD -->
+<section id="phone" style="padding: 72px 0">
+<div class="wrap feature flip">
+<div class="copy" style="display: flex; flex-direction: column; gap: 18px">
+<div class="mono" style="font-size: 12px; letter-spacing: 0.14em; color: #b08cf0">FROM YOUR PHONE</div>
+<h2 style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 800; letter-spacing: -0.02em; color: #f3f8f8">Away from your PC? Run it from Discord.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #9fb2bf">Connect your own Discord bot and every instance gets a live card in your server. Check on it, pause it, restart the game or open an emulator with a slash command. Only accounts you link can use it.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span class="mono" style="padding: 6px 12px; border-radius: 8px; background: #111822; border: 1px solid #223144; font-size: 13px; color: #c9d6da">/status</span>
+<span class="mono" style="padding: 6px 12px; border-radius: 8px; background: #111822; border: 1px solid #223144; font-size: 13px; color: #c9d6da">/start</span>
+<span class="mono" style="padding: 6px 12px; border-radius: 8px; background: #111822; border: 1px solid #223144; font-size: 13px; color: #c9d6da">/pause</span>
+<span class="mono" style="padding: 6px 12px; border-radius: 8px; background: #111822; border: 1px solid #223144; font-size: 13px; color: #c9d6da">/reload</span>
+<span class="mono" style="padding: 6px 12px; border-radius: 8px; background: #111822; border: 1px solid #223144; font-size: 13px; color: #c9d6da">/shield</span>
+<span class="mono" style="padding: 6px 12px; border-radius: 8px; background: #111822; border: 1px solid #223144; font-size: 13px; color: #c9d6da">/open</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6f8494">Alerts arrive when something needs you, and stay quiet when it fixes itself.</p>
+</div>
+<img class="shot" src="images/discord.png" alt="The Discord page: connection status, where it posts, alerts, linked accounts and recent activity" style="box-shadow: 0 30px 80px rgba(0,0,0,0.5)">
+</div>
+</section>
+
+<!-- FEATURE: GRAPHS -->
+<section style="padding: 72px 0">
+<div class="wrap feature">
+<div class="copy" style="display: flex; flex-direction: column; gap: 18px">
+<div class="mono" style="font-size: 12px; letter-spacing: 0.14em; color: #e8c06a">SEE THE PAYOFF</div>
+<h2 style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 800; letter-spacing: -0.02em; color: #f3f8f8">Every march counted as it comes home.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #9fb2bf">Gold, food and ore by day, by instance, over a day, a week, a month or all time. The dashboard shows each march's return as a bar, so you can see when the next slot frees up.</p>
+</div>
+<img class="shot" src="images/graphs.png" alt="The Graphs page: resources gathered per day as stacked bars for gold, food and ore" style="box-shadow: 0 30px 80px rgba(0,0,0,0.5)">
+</div>
+</section>
+
+<!-- FEATURE GRID -->
+<section style="padding: 72px 0 88px; border-top: 1px solid #101a27">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+<div class="mono" style="font-size: 12px; letter-spacing: 0.14em; color: #43b6c7">AND THE REST</div>
+<h2 style="margin: 0; font-size: 40px; line-height: 1.1; font-weight: 800; letter-spacing: -0.02em; color: #f3f8f8">Built for long, unattended runs.</h2>
+</div>
+<div class="grid3">
+<div style="padding: 24px; border-radius: 16px; background: #0d141e; border: 1px solid #1a2635; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #f3f8f8">Watcher</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #9fb2bf">Finds nodes further out than the in-game search reaches and sends marches to them.</p>
+</div>
+<div style="padding: 24px; border-radius: 16px; background: #0d141e; border: 1px solid #1a2635; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #f3f8f8">Schedules</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #9fb2bf">Start and stop each instance at set times. It opens the emulator for you when it needs to.</p>
+</div>
+<div style="padding: 24px; border-radius: 16px; background: #0d141e; border: 1px solid #1a2635; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #f3f8f8">Send resources</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #9fb2bf">Moves resources between your castles, and reads the castle name before every send.</p>
+</div>
+<div style="padding: 24px; border-radius: 16px; background: #0d141e; border: 1px solid #1a2635; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #f3f8f8">Plays like a person</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #9fb2bf">Varied taps and swipes, natural pauses, and breaks that close the game for a while.</p>
+</div>
+<div style="padding: 24px; border-radius: 16px; background: #0d141e; border: 1px solid #1a2635; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #f3f8f8">Recovers by itself</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #9fb2bf">Stray popups, a frozen game or a lost connection get handled, and you hear about it only if it can't.</p>
+</div>
+<div style="padding: 24px; border-radius: 16px; background: #0d141e; border: 1px solid #1a2635; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #f3f8f8">Updates itself</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #9fb2bf">New versions install from inside the app, and only ones signed by NodeWatch.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- GET IT -->
+<section id="get" style="padding: 96px 0; background: radial-gradient(800px 420px at 50% 100%, rgba(139,92,246,0.14), rgba(6,12,20,0) 70%), #08101a; border-top: 1px solid #101a27">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px">
+<img src="images/nodewatch-icon.png" alt="" aria-hidden="true" style="width: 72px; height: 72px; border-radius: 18px">
+<h2 style="margin: 0; font-size: 44px; line-height: 1.1; font-weight: 800; letter-spacing: -0.02em; color: #f3f8f8">Get NodeWatch</h2>
+<p style="margin: 0; max-width: 560px; font-size: 18px; line-height: 1.55; color: #9fb2bf">Everything happens in the Discord: buying a licence, downloading, and help if you get stuck.</p>
+</div>
+<ol class="steps" style="margin: 0; padding: 0; list-style: none">
+<li style="padding: 26px; border-radius: 16px; background: #0d141e; border: 1px solid #1a2635; display: flex; flex-direction: column; gap: 10px">
+<span class="mono" style="font-size: 13px; color: #43b6c7">01</span>
+<h3 style="margin: 0; font-size: 19px; font-weight: 700; color: #f3f8f8">Join the Discord</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #9fb2bf">Say hello and ask anything before you buy.</p>
+</li>
+<li style="padding: 26px; border-radius: 16px; background: #0d141e; border: 1px solid #1a2635; display: flex; flex-direction: column; gap: 10px">
+<span class="mono" style="font-size: 13px; color: #43b6c7">02</span>
+<h3 style="margin: 0; font-size: 19px; font-weight: 700; color: #f3f8f8">Get a licence key</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="padding: 6px 12px; border-radius: 8px; background: #111822; border: 1px solid #223144; font-size: 15px; color: #c9d6da"><strong style="color: #f3f8f8">$10</strong> a month</span>
+<span style="padding: 6px 12px; border-radius: 8px; background: rgba(67,182,199,0.12); border: 1px solid #2c6c78; font-size: 15px; color: #c9d6da"><strong style="color: #6fe1e6">$40</strong> lifetime</span>
+</div>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #9fb2bf">One key per PC.</p>
+</li>
+<li style="padding: 26px; border-radius: 16px; background: #0d141e; border: 1px solid #1a2635; display: flex; flex-direction: column; gap: 10px">
+<span class="mono" style="font-size: 13px; color: #43b6c7">03</span>
+<h3 style="margin: 0; font-size: 19px; font-weight: 700; color: #f3f8f8">Install and launch</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #9fb2bf">Run the installer, paste your key, and the setup checks your emulators for you.</p>
+</li>
+</ol>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px">
+<a class="btn btn-primary" href="https://discord.gg/HCs2wAwmsx" target="_blank" rel="noopener" style="min-height: 56px; font-size: 18px; padding: 0 30px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+Join the NodeWatch Discord
+</a>
+<p style="margin: 0; font-size: 14px; color: #6f8494">Needs a Windows PC and an emulator set to 1080 × 1920 portrait.</p>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding: 40px 0 48px; border-top: 1px solid #101a27">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: flex-start">
+<img src="images/nodewatch-logo.png" alt="NodeWatch" style="height: 20px; width: auto; opacity: 0.85">
+<p style="margin: 0; max-width: 620px; font-size: 13px; line-height: 1.6; color: #6f8494">NodeWatch is an independent tool and isn't made by or affiliated with the game's developer. You use it at your own risk: no setting makes detection impossible, and its creator isn't responsible for bans or lost progress.</p>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
